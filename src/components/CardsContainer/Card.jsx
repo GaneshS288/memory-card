@@ -1,8 +1,8 @@
-export default function Card({ title, imgUrl }) {
+export default function Card({ name, imgUrl }) {
   return (
     <div className="card">
-      <img src={imgUrl} alt={title} />
-      <p>{title}</p>
+      <img src={imgUrl} alt={name} />
+      <p>{name}</p>
     </div>
   );
 }

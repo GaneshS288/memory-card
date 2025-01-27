@@ -36,12 +36,12 @@ async function fetchPokemonData(pokemonName) {
   }
 }
 
-export default function getPokemonsData(pokemonNameList) {
+export default async function getPokemonsData() {
   const pokemonDataList = [];
 
   for (let i = 0; i < pokemonNameList.length; i++) {
-    const pokemonData = fetchPokemonData(pokemonNameList[i]);
-    pokemonData.then((value) => pokemonDataList.push(value));
+    const pokemonData = await fetchPokemonData(pokemonNameList[i]);
+    pokemonDataList.push(pokemonData)
   }
 
   return pokemonDataList;
