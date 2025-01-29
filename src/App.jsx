@@ -14,17 +14,6 @@ function App() {
   const [gameStatus, setGameStatus] = useState("ready");
   const [hasWon, setHasWon] = useState(false);
 
-  function updateScores(cardSelected, reset = false) {
-    const newScore = score + 1;
-
-    if (reset) {
-      setScore(0);
-    } else if(cardSelected) {
-      setScore(newScore);
-      highScore < newScore ? setHighScore(newScore) : null;
-    }
-  }
-
   function updateCardsData(selectedCardData) {
     if(selectedCardData.selected)
       return;
@@ -35,11 +24,44 @@ function App() {
     setCardsData(newCardsData);
   }
 
+
+  function updateScores(cardSelected, reset = false) {
+    const newScore = score + 1;
+
+    if (reset) {
+      setScore(0);
+    } else if(!cardSelected) {
+      setScore(newScore);
+      highScore < newScore ? setHighScore(newScore) : null;
+    }
+  }
+
+  function updateGameStatus(cardSelected, setActive = false) {
+    if(setActive)
+      setGameStatus("active");
+    else if(cardSelected || score === cardsData.length)
+      setGameStatus("concluded");
+  }
+
+  function updateHasWon(reset = false) {
+    if(reset)
+      setHasWon(false);
+    else if(score === cardsData.length)
+      setHasWon(true);
+  }
+  
   function handleCardClick(cardData) {
     updateScores(cardData.selected);
     updateCardsData(cardData);
-    cardData.selected ? setGameStatus("concluded") : null;
+    updateGameStatus(cardData.selected);
+    updateHasWon();
     console.log(score, highScore);
+  }
+
+  function handleStartOrResetGame(cardData) {
+    updateGameStatus(false, true);
+    updateScores(false, true);
+    updateHasWon(true);
   }
 
   useEffect(() => {

@@ -33,7 +33,7 @@ function HeroButton({ gameStatus, setGameStatus }) {
     return null;
   } else if (gameStatus === "concluded") {
     buttonText = "Play again";
-    newGameStatus = "concluded";
+    newGameStatus = "active";
   }
 
   return (
