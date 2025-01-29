@@ -9,6 +9,24 @@ import getPokemonsData from "./util/fetchCardData.js";
 
 function App() {
   const [cardsData, setCardsData] = useState([]);
+  const [score, setScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
+
+  function updateScores(cardSelected) {
+    const newScore = score + 1;
+
+    if (cardSelected) {
+      setScore(0);
+    } else {
+      setScore(newScore);
+      highScore < newScore ? setHighScore(newScore) : null;
+    }
+  }
+
+  function handleCardClick(cardSelected) {
+    updateScores(cardSelected);
+    console.log(score, highScore);
+  }
 
   useEffect(() => {
     const newCardsData = getPokemonsData();
@@ -19,9 +37,12 @@ function App() {
 
   return (
     <>
-      <Header></Header>
+      <Header score={score} highScore={highScore}></Header>
       <Hero></Hero>
-      <CardsContainer cardsData={cardsData}></CardsContainer>
+      <CardsContainer
+        cardsData={cardsData}
+        handleCardClick={handleCardClick}
+      ></CardsContainer>
     </>
   );
 }
