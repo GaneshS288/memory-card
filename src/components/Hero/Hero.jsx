@@ -24,7 +24,6 @@ export default function Hero({ gameStatus, hasWon, handleButtonClick }) {
 
 function HeroButton({ gameStatus, handleClick }) {
   let buttonText;
-  let newGameStatus;
 
   if (gameStatus === "ready") {
     buttonText = "Start";

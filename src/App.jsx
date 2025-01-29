@@ -14,7 +14,14 @@ function App() {
   const [gameStatus, setGameStatus] = useState("ready");
   const [hasWon, setHasWon] = useState(false);
 
-  function updateCardsData(selectedCardData) {
+  function updateCardsData(selectedCardData, reset = false) {
+    if(reset) {
+      let newCardsData = cardsData.map((data) => {
+        return {...data, selected: false};
+      })
+      setCardsData(newCardsData);
+      return;
+    }
     if(selectedCardData.selected)
       return;
 
@@ -45,10 +52,10 @@ function App() {
       setGameStatus("concluded");
   }
 
-  function updateHasWon(reset = false) {
+  function updateHasWon(cardSelected, reset = false) {
     if(reset)
       setHasWon(false);
-    else if((score + 1) === cardsData.length)
+    else if((score + 1) === cardsData.length && !cardSelected)
       setHasWon(true);
   }
   
@@ -56,14 +63,15 @@ function App() {
     updateScores(cardData.selected);
     updateCardsData(cardData);
     updateGameStatus(cardData.selected);
-    updateHasWon();
+    updateHasWon(cardData.selected);
     console.log(score, highScore);
   }
 
   function handleStartOrResetGame() {
+    updateCardsData(null, true);
     updateGameStatus(false, true);
     updateScores(false, true);
-    updateHasWon(true);
+    updateHasWon(false, true);
   }
 
   useEffect(() => {
