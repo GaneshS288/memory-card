@@ -28,6 +28,7 @@ async function fetchPokemonData(pokemonName) {
         .toUpperCase()}${responseJson.name.slice(1)}`,
       spriteUrl: responseJson.sprites.front_default,
       id: responseJson.id,
+      selected: false,
     };
 
     return pokemonData;
@@ -41,7 +42,7 @@ export default async function getPokemonsData() {
 
   for (let i = 0; i < pokemonNameList.length; i++) {
     const pokemonData = await fetchPokemonData(pokemonNameList[i]);
-    pokemonDataList.push(pokemonData)
+    pokemonDataList.push(pokemonData);
   }
 
   return pokemonDataList;
