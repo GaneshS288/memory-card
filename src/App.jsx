@@ -6,6 +6,7 @@ import Header from "./components/Header/Header.jsx";
 import Hero from "./components/Hero/Hero.jsx";
 import CardsContainer from "./components/CardsContainer/CardsContainer.jsx";
 import getPokemonsData from "./util/fetchCardData.js";
+import shuffleArray from "./util/shuffleArray.js";
 
 function App() {
   const [cardsData, setCardsData] = useState([]);
@@ -19,7 +20,7 @@ function App() {
       let newCardsData = cardsData.map((data) => {
         return {...data, selected: false};
       })
-      setCardsData(newCardsData);
+      setCardsData(shuffleArray(newCardsData));
       return;
     }
     if(selectedCardData.selected)
@@ -28,7 +29,7 @@ function App() {
     let newSelectedCardData = {...selectedCardData, selected : true};
     let newCardsData = [...cardsData].filter((data) => data.id !== newSelectedCardData.id);
     newCardsData.push(newSelectedCardData);
-    setCardsData(newCardsData);
+    setCardsData(shuffleArray(newCardsData));
   }
 
 
@@ -77,7 +78,7 @@ function App() {
   useEffect(() => {
     const newCardsData = getPokemonsData();
     newCardsData.then((value) => {
-      setCardsData(value);
+      setCardsData(shuffleArray(value));
     });
   }, []);
 
