@@ -39,14 +39,16 @@ function App() {
   function updateGameStatus(cardSelected, setActive = false) {
     if(setActive)
       setGameStatus("active");
-    else if(cardSelected || score === cardsData.length)
+    else if(cardSelected)
+      setGameStatus("concluded");
+    else if((score + 1) === cardsData.length)
       setGameStatus("concluded");
   }
 
   function updateHasWon(reset = false) {
     if(reset)
       setHasWon(false);
-    else if(score === cardsData.length)
+    else if((score + 1) === cardsData.length)
       setHasWon(true);
   }
   
@@ -58,7 +60,7 @@ function App() {
     console.log(score, highScore);
   }
 
-  function handleStartOrResetGame(cardData) {
+  function handleStartOrResetGame() {
     updateGameStatus(false, true);
     updateScores(false, true);
     updateHasWon(true);
@@ -74,10 +76,11 @@ function App() {
   return (
     <>
       <Header score={score} highScore={highScore}></Header>
-      <Hero gameStatus={gameStatus} setGameStatus={setGameStatus} hasWon={hasWon}></Hero>
+      <Hero gameStatus={gameStatus} hasWon={hasWon} handleButtonClick={handleStartOrResetGame}></Hero>
       <CardsContainer
         cardsData={cardsData}
         handleCardClick={handleCardClick}
+        gameStatus={gameStatus}
       ></CardsContainer>
     </>
   );

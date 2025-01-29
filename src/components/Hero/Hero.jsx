@@ -1,4 +1,4 @@
-export default function Hero({ gameStatus, setGameStatus, hasWon }) {
+export default function Hero({ gameStatus, hasWon, handleButtonClick }) {
   const errorMsg = "Failed to fetch game resources, please click retry";
   const gameInstructions =
     "Click on the cards to increase your score but don't click the same card Twice! You lose if you click the same card twice.";
@@ -16,28 +16,26 @@ export default function Hero({ gameStatus, setGameStatus, hasWon }) {
       </p>
       <HeroButton
         gameStatus={gameStatus}
-        setGameStatus={setGameStatus}
+        handleClick={handleButtonClick}
       ></HeroButton>
     </section>
   );
 }
 
-function HeroButton({ gameStatus, setGameStatus }) {
+function HeroButton({ gameStatus, handleClick }) {
   let buttonText;
   let newGameStatus;
 
   if (gameStatus === "ready") {
     buttonText = "Start";
-    newGameStatus = "active";
   } else if (gameStatus === "active") {
     return null;
   } else if (gameStatus === "concluded") {
     buttonText = "Play again";
-    newGameStatus = "active";
   }
 
   return (
-    <button type="button" onClick={() => setGameStatus(newGameStatus)}>
+    <button type="button" onClick={() => handleClick()}>
       {buttonText}
     </button>
   );
