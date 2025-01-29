@@ -14,12 +14,12 @@ function App() {
   const [gameStatus, setGameStatus] = useState("ready");
   const [hasWon, setHasWon] = useState(false);
 
-  function updateScores(cardSelected) {
+  function updateScores(cardSelected, reset = false) {
     const newScore = score + 1;
 
-    if (cardSelected) {
+    if (reset) {
       setScore(0);
-    } else {
+    } else if(cardSelected) {
       setScore(newScore);
       highScore < newScore ? setHighScore(newScore) : null;
     }
