@@ -1,8 +1,8 @@
-export default function Card({ name, imgUrl, selected, handleClick }) {
+export default function Card({ cardData, handleClick }) {
   return (
-    <div className="card" onClick={() => handleClick(selected)}>
-      <img src={imgUrl} alt={name} />
-      <p>{name}</p>
+    <div className="card" onClick={() => handleClick(cardData)}>
+      <img src={cardData.spriteUrl} alt={cardData.name} />
+      <p>{cardData.name}</p>
     </div>
   );
 }

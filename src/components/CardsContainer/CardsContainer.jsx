@@ -6,13 +6,7 @@ export default function CardsContainer({ cardsData, handleCardClick }) {
       <div>
         {cardsData.map((cardData) => {
           return (
-            <Card
-              key={cardData.id}
-              imgUrl={cardData.spriteUrl}
-              name={cardData.name}
-              selected={cardData.selected}
-              handleClick={handleCardClick}
-            ></Card>
+            <Card key={cardData.id} cardData={cardData} handleClick={handleCardClick}></Card>
           );
         })}
       </div>
