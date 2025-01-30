@@ -1,0 +1,29 @@
+section.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6em;
+    padding: 2em;
+    font-size: 1.4rem;
+    background-color: var(--grey-800);
+    color: var(--grey-100);
+}
+
+section.hero > p {
+    line-height: 1.4em;
+}
+
+section.hero > button {
+    font-size: 1.4rem;
+    padding: 1em 2.4em;
+    border-radius: 10px;
+}
+
+section.hero > button:hover {
+    box-shadow: 2px 2px 1px var(--grey-400);
+}
+
+section.hero > button:active {
+    box-shadow: inset 4px 4px 1px var(--grey-400);
+}

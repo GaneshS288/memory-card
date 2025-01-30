@@ -1,3 +1,5 @@
+import "./Hero.css"
+
 export default function Hero({ gameStatus, hasWon, handleButtonClick }) {
   const errorMsg = "Failed to fetch game resources, please click retry";
   const gameInstructions =

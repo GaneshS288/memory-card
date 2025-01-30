@@ -45,6 +45,8 @@ table {
 :root {
     --grey-900: #111827;
     --grey-100: #f3f4f6;
+    --grey-400: #a1a1aa;
+    --grey-800: #1f2937;
 }
 
 * {
