@@ -1,0 +1,27 @@
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2em;
+    padding: 1em 0;
+    background-color: var(--grey-900);
+    color: var(--grey-100);
+
+}
+
+.header-title {
+    font-size: 2.4rem;
+}
+
+.score, .highscore {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 1.4rem;
+    padding-bottom: 1rem;
+}
+
+.score > span:first-child, .highscore > span:first-child {
+    flex: 1;
+}
