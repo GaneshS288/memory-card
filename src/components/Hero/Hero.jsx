@@ -10,9 +10,8 @@ export default function Hero({ gameStatus, hasWon, handleButtonClick }) {
       <p className="hero-text">
         {gameStatus === "ready" ? gameInstructions : null}
         {gameStatus === "active" ? gameInstructions : null}
-        {gameStatus === "concluded" && hasWon === true
-          ? winnerMessage
-          : loserMessage}
+        {gameStatus === "concluded" && hasWon === true ? winnerMessage : null}
+        {gameStatus === "concluded" && hasWon === false ? loserMessage : null}
       </p>
       <HeroButton
         gameStatus={gameStatus}
