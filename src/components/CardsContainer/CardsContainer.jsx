@@ -1,4 +1,5 @@
 import Card from "./Card.jsx";
+import "./CardsContainer.css"
 
 export default function CardsContainer({
   cardsData,

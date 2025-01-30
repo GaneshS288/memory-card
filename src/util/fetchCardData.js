@@ -11,6 +11,8 @@ const pokemonNameList = [
   "infernape",
   "onix",
   "snivy",
+  "heracross",
+  "gliscor"
 ];
 
 async function fetchPokemonData(pokemonName) {
