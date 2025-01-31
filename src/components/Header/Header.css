@@ -3,7 +3,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.2em;
+    gap: 2.4em;
     padding: 1em 0;
     background-color: var(--grey-900);
     color: var(--grey-100);
@@ -11,14 +11,18 @@ header {
 }
 
 .header-title {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: "EBGarmond", 'Times New Roman', Times, serif;
 }
 
 .score, .highscore {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-    font-size: 1.4rem;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
     padding-bottom: 1rem;
 }
 

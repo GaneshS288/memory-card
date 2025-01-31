@@ -60,7 +60,7 @@ function App() {
       setHasWon(true);
   }
   
-  function handleCardClick(cardData) {
+  function handleCardAnimationEnd(cardData) {
     updateScores(cardData.selected);
     updateCardsData(cardData);
     updateGameStatus(cardData.selected);
@@ -88,7 +88,7 @@ function App() {
       <Hero gameStatus={gameStatus} hasWon={hasWon} handleButtonClick={handleStartOrResetGame}></Hero>
       <CardsContainer
         cardsData={cardsData}
-        handleCardClick={handleCardClick}
+        handleCardAnimationEnd={handleCardAnimationEnd}
         gameStatus={gameStatus}
       ></CardsContainer>
     </>
