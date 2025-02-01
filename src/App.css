@@ -47,6 +47,13 @@ table {
     --grey-100: #f3f4f6;
     --grey-400: #a1a1aa;
     --grey-800: #1f2937;
+	--cyan-700: #0E7490;
+	--sky-900 : #0C4A6E;
+	--neutral-500: #737373;
+	--neutral-800: #262626;
+	--red-500: #EF4444;
+	--red-800: #991B1B;
+	--orange-200: #FED7AA;
 }
 
 * {

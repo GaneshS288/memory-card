@@ -4,7 +4,7 @@ export default function Card({
   cardData,
   animationClassName,
   handleClick,
-  handleAnimationEnd
+  handleAnimationEnd,
 }) {
   return (
     <div className="card">
@@ -22,7 +22,38 @@ export default function Card({
           <p className="card-title">{cardData.name}</p>
         </div>
 
-        <div className="card__back"></div>
+        <div className="card__back">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
   );

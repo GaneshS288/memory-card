@@ -3,17 +3,23 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2.4em;
-    padding: 1em 0;
-    background-color: var(--grey-900);
-    color: var(--grey-100);
-
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: var(--orange-200);
 }
 
 .header-title {
     font-size: 1.8rem;
+    padding: 1em;
+    text-align: center;
     font-weight: bold;
-    font-family: "EBGarmond", 'Times New Roman', Times, serif;
+    align-self: stretch;
+    border-bottom: 1px solid var(--neutral-800);
+    color: var(--neutral-800);
+    
+}
+
+.scores-container {
+    padding: 2em 0 1em 0;
 }
 
 .score, .highscore {
@@ -22,10 +28,11 @@ header {
     gap: 1rem;
     font-size: 2rem;
     font-weight: bold;
-    font-family: "Open Sans", Arial, Helvetica, sans-serif;
     padding-bottom: 1rem;
+    color: var(--red-500);
 }
 
 .score > span:first-child, .highscore > span:first-child {
     flex: 1;
+    text-decoration: underline;
 }

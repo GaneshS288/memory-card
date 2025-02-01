@@ -3,6 +3,7 @@ section.cards-container {
     justify-content: center;
     padding: 2em;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    background-color: var(--neutral-500);
 }
 
 section.cards-container > div {

@@ -6,25 +6,29 @@ section.hero {
     gap: 1.6em;
     padding: 2em;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
-    background-color: var(--grey-800);
-    color: var(--grey-100);
+    background-color: #E5E5E5;
+    color: var(--neutral-800);
 }
 
 section.hero > p {
     line-height: 1.5;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 section.hero > button {
     font-size: 1.2rem;
+    font-weight: bold;
+    background-color: var(--red-500);
     padding: 1em 2em;
-    border-radius: 10px;
+    color: var(--neutral-800);
+    box-shadow: 5px 5px var(--neutral-800) ;
+    transition: transform 0.5s ease-out;
 }
 
 section.hero > button:hover {
-    box-shadow: 2px 2px 1px var(--grey-400);
+    transform: scale(1.1, 1.1);
 }
 
 section.hero > button:active {
-    box-shadow: inset 4px 4px 1px var(--grey-400);
+    background-color: var(--orange-200);
 }
